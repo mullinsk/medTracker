@@ -17,7 +17,7 @@ font-style: normal;
 .icon-cal:before {
 	content: "\e000";
 }
-.icon-home63:before {
+.icon-home:before {
 	content: "\e001";
 }
 .icon-pill:before {
