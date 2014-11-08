@@ -29,6 +29,7 @@ h1{
 }
 a.icon{
 	text-decoration: none;
+	display: inline-block;
 }
 span{
 	color:#0E2E8C;
@@ -126,15 +127,64 @@ span.icon-pencil{
 	font-size:18px;
 }
 
-.cf {
+.reminder-set{
+	width:340px;
+	border-top:1px solid #0E2E8C;
+	border-bottom: 1px solid #0E2E8C;
+	margin-left:-10px;
+	padding:10px;
+	text-align:center;
+
+}
+.time, .am-pm, .month, .day, .year{
+	display:inline-block;
+	font-size:28px;
+	margin: 0 5px;
+}
+.am-pm{
+	margin:0 20px 0 0;
+}
+#add-notification{
+	margin-top:10px;
+}
+.reminder-form{
+	width:100%;
+	padding:10px;
+	display: none;
+}
+.reminder-form .time,
+.reminder-form .date{
+	float:left;
+	overflow: hidden;
+}
+input[type=time]{
+	line-height:32px;
+	font-size:26px;
+	width:100px;
+	font-family: 'Roboto Condensed', sans-serif;
+	display:inline;
+	float:left;
+}
+input[type=date]{
+	line-height::32px;
+	font-size:26px;
+	width:200px;
+	font-family: 'Roboto Condensed', sans-serif;
+	display: inline;
+	float:right;
+}
+.buttons{
+	width:100%;
+	text-align: center;
 	display: inline-block;
+	margin-top:10px;
 }
-
-html[xmlns] .cf {
-	display: block;
+.buttons a{
+	color:#E8F8FF;
+	background: #0E2E8C;
+	font-size:18px;
+	padding:3px 5px;
+	border-radius: 5px;
+	margin-bottom:2px;
 }
-
-* html .cf {
-	height: 1%;
 }
-
