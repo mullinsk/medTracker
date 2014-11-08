@@ -129,12 +129,14 @@ span.icon-pencil{
 
 .reminder-set{
 	width:340px;
-	border-top:1px solid #0E2E8C;
 	border-bottom: 1px solid #0E2E8C;
 	margin-left:-10px;
 	padding:10px;
 	text-align:center;
 
+}
+.reminder-set:first-of-type{
+	border-top:1px solid #0E2E8C;
 }
 .time, .am-pm, .month, .day, .year{
 	display:inline-block;
