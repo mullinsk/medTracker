@@ -113,7 +113,7 @@ span{
 }
 .input-row input[type=text]{
 	height:36px;
-	width:200px;
+	width:225px;
 	font-size:26px;
 	border:1px solid #0E2E8C;
 }
@@ -121,7 +121,8 @@ span{
 	width:50px;
 }
 .input-row textarea{
-	width:200px;
+	width:225px;
+	max-width: 225px;
 	height:100px;
 	border:1px solid #0E2E8C;
 }
