@@ -5,22 +5,67 @@
 	<link rel="stylesheet" type="text/css" href="icon-font/flaticon.css">
 	<link rel="stylesheet" type="text/css" href="css/main.css">
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+	<script type="text/javascript" src="js/jqtransform/jqtransformplugin/jquery.jqtransform.js"></script>
 	<script type="text/javascript" src="js/main.js"></script>
 </head>
 <body class="cf">
 	<div class="content cf">
 		<h1>New Prescription</h1>
-		<div class="input-row"><label for="name">Prescription Name</label><input id="dose" type="text"></div>
-		<div class="input-row"><label for="dose">Dosage</label><input id="dose" type="text"></div>
-		<div class="input-row"><label for="quant">Current Quantity</label></div>
-		<div class="input-row"><label for="refill">Refills</label></div>
-		<div class="input-row"><label for="add">Additional Information</label></div>
-
+		<form class="jqtransform">
+			<div class="input-row">
+				<div class="left">
+					<label for="name" class="two-line">Prescription Name</label>
+				</div>
+				<div class="right">
+					<input id="name" type="text">
+				</div>
+			</div>
+			<div class="input-row">
+				<div class="left">
+					<label for="dose">Dosage</label>
+				</div>
+				<div class="right">
+					<input id="dose" type="text" class="short">
+					<label class="small">pill(s)</label>
+					<select>
+						<option>Daily</option>
+						<option>2x Daily</option>
+						<option>3x Daily</option>
+					</select>
+				</div>
+			</div>
+			<div class="input-row">
+				<div class="left">
+					<label for="quant" class="two-line">Current Quantity</label>
+				</div>
+				<div class="right">
+					<input id="quant" type="text" class="short">
+				</div>
+			</div>
+			<div class="input-row">
+				<div class="left">
+					<label for="refill">Refills</label>
+				</div>
+				<div class="right">
+					<input id="refill" type="text" class="short">
+					<label for="date" class="small">until</label>
+					<input id="date" type="date" style="font-size:20px;width:100px">
+				</div>
+			</div>
+			<div class="input-row">
+<div class="left">
+			<label for="add">Additional Information</label>
+			</div>
+				<div class="right">
+					<textarea></textarea>
+				</div>
+			</div>
+		</form>
 		<div class="footer cf">
 			<a href="index2.html" class="button">SAVE</a>
 			<a href="index.html" class="home icon"><span class="icon-home"></span></a>
 		</div>
 	</div>
-	
+
 </body>
 </html>

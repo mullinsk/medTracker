@@ -46,13 +46,62 @@ span{
 	width:97px;
 	margin-right:10px;
 	text-align:right;
+	line-height:42px;
+}
 
+.jqTransformHidden{
+	display:none;
+}
+.jqTransformSelectWrapper div{
+	border:1px solid #0E2E8C;
+}
+.jqTransformSelectWrapper{
+	font-size:28px;
+	width:125px;
+	float: left;
+	margin-left:60px;
+}
+.hour .jqTransformSelectWrapper{
+	width:100px;
+	margin-left:0px;
+}
+.jqTransformSelectOpen{
+	padding-right:10px;
+	float:right;
+}
+.jqTransformSelectOpen:before{
+	content:'\25BC';
+	width:200px;
+	font-size:20px;
+}
+.input-row label.two-line{
+	line-height:22px;
+}
+.input-row label.small{
+	width:50px;
+}
+.input-row .left{
+	float:left;
+	width:107px;
+}
+.input-row .right{
+	float:left;
+	width:230px;
 }
 .input-row input[type=text]{
-	height:30px;
+	height:36px;
+	width:200px;
+	font-size:26px;
+	border:1px solid #0E2E8C;
 }
-
-
+.input-row input[type=text].short{
+	width:50px;
+}
+.input-row textarea{
+	width:200px;
+	height:100px;
+	border:1px solid #0E2E8C;
+}
 .footer{
 	display:block;
 	position:fixed;
@@ -64,6 +113,9 @@ span{
 .footer .home{
 	float:right;
 	margin-right:25px;
+}
+.footer .cal{
+	margin-left:25px;
 }
 .footer .button{
 	float:center;
@@ -153,6 +205,14 @@ span.icon-pencil{
 	width:100%;
 	padding:10px;
 	display: none;
+	border-bottom:1px solid #0E2E8C;
+	margin-left:-10px;
+	padding-left:10px;
+	padding-bottom:0;
+}
+.reminder-form p{
+	float:left;
+	margin-left:10px;
 }
 .reminder-form .time,
 .reminder-form .date{
@@ -170,10 +230,28 @@ input[type=time]{
 input[type=date]{
 	line-height::32px;
 	font-size:26px;
-	width:200px;
+	width:197px;
 	font-family: 'Roboto Condensed', sans-serif;
 	display: inline;
 	float:right;
+	color:#0E2E8C;
+	border:1px solid #0E2E8C;
+}
+.meridian{
+	width:25px;
+	float:left;
+	margin-left:2px;
+}
+.meridian span{
+	font-size:14px;
+	padding:1px;
+	display:block;
+	cursor: pointer;
+	border-radius:2px;
+}
+.meridian span.selected{
+	background: #0E2E8C;
+	color:#E8F8FF;
 }
 .buttons{
 	width:100%;

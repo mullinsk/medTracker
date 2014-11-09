@@ -5,46 +5,69 @@
 	<link rel="stylesheet" type="text/css" href="icon-font/flaticon.css">
 	<link rel="stylesheet" type="text/css" href="css/main.css">
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+	<script type="text/javascript" src="js/jqtransform/jqtransformplugin/jquery.jqtransform.js"></script>
 	<script type="text/javascript" src="js/main.js"></script>
 </head>
 <body>
 	<div class="content" style="text-align:center;">
-		<h1>Refill Reminder</h1>
+		<h1>Schedule Reminder</h1>
 		<div class="reminder-set">
 			<div class="time">
-				30 minutes before
+				5:00
+			</div>
+			<div class="am-pm">
+				pm
+			</div>
+			<div class="month">
+				Oct
+			</div>
+			<div class="day">
+				30
+			</div>
+			<div class="year">
+				2014
 			</div>
 		</div>
-		<div class="reminder-form cf">
-			<form>
-				<div class="time" style="margin:auto">
+		<form class="jqtransform">
+			<div class="reminder-form hour cf">
+				<div class="time">
 					<select>
-						<option>2 hours</option>
-						<option>1 hour</option>
-						<option>45 minutes</option>
-						<option>30 minutes</option>
-						<option>15 minutes</option>
-						<option>5 minutes</option>
+						<option>1:00</option>
+						<option>2:00</option>
+						<option>3:00</option>
+						<option>4:00</option>
+						<option>5:00</option>
+						<option>6:00</option>
+						<option>7:00</option>
+						<option>8:00</option>
+						<option>9:00</option>
+						<option>10:00</option>
+						<option>11:00</option>
+						<option>12:00</option>
 					</select>
-					before
-				</div>
-				<div class="buttons cf">
-					<a href="refill-added.html">Save</a>
-					<a href="refill.html">Cancel</a>
+					<div class="meridian">
+						<span class="am selected">
+							am
+						</span>
+						<span class="pm">
+							pm
+						</span>
+					</div>
+					</div>
+					<div class="date">
+						<input type="date">
+					</div>
+					<div class="buttons cf">
+						<a href="refill-added.html">Save</a>
+						<a href="refill.html">Cancel</a>
+					</div>
 				</div>
 			</form>
-		</div>
-		<a href="#" class="icon" id="add-notification">
-			<span class="icon-plus"></span>
-		</a>
-		<div class="footer cf">
-			<a href="index2.html" class="home icon"><span class="icon-home"></span></a>
-		<script type="text/javascript">
-			$('#add-notification').on('click', function(e){
-				$('.reminder-form').show();
-
-			})
-		</script>
-	</div>
-</body>
-</html>
+			<a href="#" class="icon" id="add-notification">
+				<span class="icon-plus"></span>
+			</a>
+			<div class="footer cf">
+				<a href="index2.html" class="home icon"><span class="icon-home"></span></a>
+			</div>
+		</body>
+		</html>
