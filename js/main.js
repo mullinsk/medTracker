@@ -1,7 +1,4 @@
-function init(){
-
-}
-
+window.meds = [];
 $(window).load(function(){
 	$(window).bind('hashchange', function() {
 		var	newHash  = window.location.hash,
@@ -65,6 +62,14 @@ $(window).load(function(){
 					'<div class="reminder-set"><div class="time">'
 					+time+' before</div></div>'
 					);
+			});
+
+			$('#addmed').on('click', function(e){
+				meds.push({'med':'med'});
+			});
+			$.each(meds, function(i, val){
+				var name = meds[i].med;
+				$('.medicine-list').append(name);
 			});
 		});
 
