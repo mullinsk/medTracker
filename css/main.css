@@ -15,6 +15,7 @@ a{
 h1{
 	margin-top: 0;
 	text-transform: capitalize;
+	font-size:35px;
 }
 h1.title{
 	text-shadow:3px 3px #E8F8FF;
@@ -190,6 +191,12 @@ p{
 	top: 10px;
 
 }
+.back:before{
+	content:'\276E';
+}
+.back{
+	float:left;
+}
 .notification-buttons a{
 	color:#E8F8FF;
 	background: #0E2E8C;
@@ -205,17 +212,27 @@ span.icon-pencil,
 	color:#fff;
 	font-size:18px;
 }
-
+#currDose, #currDaily, #currQuant, #currRefill{
+	font-size:22px;
+	color:#333;
+}
+.verify{
+	display:none;
+}
 .reminder-set{
 	width:340px;
 	border-bottom: 1px solid #0E2E8C;
+	text-align:center;
 	margin-left:-10px;
 	padding:10px;
-	text-align:center;
 
 }
-.reminder-set:first-of-type{
+.all-reminders{
 	border-top:1px solid #0E2E8C;
+	width: 100%;
+	margin-left:-10px;
+	padding:0 10px;
+
 }
 .time, .am-pm, .month, .day, .year{
 	display:inline-block;
@@ -254,6 +271,12 @@ input[type=time]{
 	display:inline;
 	float:left;
 }
+.delete:before{
+	content:'\2715';
+	float: right;
+	margin-right: 5px;
+	cursor: pointer;
+}
 input#datepicker{
 	height:37px;
 	font-size:26px;
@@ -272,6 +295,11 @@ ul.med-links{
 	margin:0;
 	padding:0;
 	list-style: none;
+}
+ul.med-links li a{
+	text-transform: capitalize;
+	margin-bottom:5px;
+	text-decoration: underline;
 }
 .error-message{
 	color:red;

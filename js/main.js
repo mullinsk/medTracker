@@ -14,7 +14,6 @@ $(window).load(function(){
 			});
 		// Dynamically update Med Profile
 		if(window.location.hash==='#medprofile'){
-			$('#currName').html(current);
 			$('#currName2').html(current);
 			$('#currDose').html(meds[current]['dose']);
 			$('#currDaily').html(meds[current]['daily']);
@@ -22,7 +21,9 @@ $(window).load(function(){
 			$('#currRefill').html(meds[current]['refill']);
 			$('#currAdd').html(meds[current]['add']);
 		}
-
+		$('#content').on('click', '.delete', function(e) {
+			$(this).parent('.reminder-set').remove();
+		});
 		$('#content').on('click', '#add-notification', function(e){
 			e.preventDefault();
 			e.stopPropagation();
@@ -36,7 +37,7 @@ $(window).load(function(){
 		});
 		$('#content').on('focus', '#datepicker', function(){
 			$(this).removeClass('error');
-		})
+		});
 			// REFILL REMINDER
 			$('.reminder-form.refill #save').on('click', function(e){
 				e.preventDefault();
@@ -61,8 +62,13 @@ $(window).load(function(){
 						+day+
 						'</div><div class="year">'
 						+year+
-						'</div></div>');
+						'</div><span class="delete"></span></div>');
 				}
+			});
+			$('#content').on('click', '.reminder-form #cancel', function(e) {
+				e.preventDefault();
+				e.stopPropagation();
+				$('.reminder-form').hide();
 			});
 			// DAILY REMINDER
 			$('.reminder-form.sched #save').on('click', function(e){
@@ -72,10 +78,48 @@ $(window).load(function(){
 				$('.reminder-form').hide();
 				$('.all-reminders').append(
 					'<div class="reminder-set"><div class="time">'
-					+time+' before</div></div>'
+					+time+' before</div><span class="delete"></span></div>'
 					);
 			});
+			$('#verify').on('click', function(e){
+				e.preventDefault();
+				e.stopPropagation();
+				var name = $('#name').val();
+				var namecheck = $('#name').val();
+				var dose = $('#dose').val();
+				var daily = $('.jqTransformSelectWrapper div span').html();
+				var quant = $('#quant').val();
+				var refill = $('#refill').val();
+				var date = $('#datepicker').datepicker('getDate');
+				var day = $.datepicker.formatDate( "mm/dd/yy", date);
+				var add = $('#add').val();
+				if(dose=="" || quant =="" || refill=="" || namecheck=="" || day==""){
 
+					$('.error-message').show();
+				}else{
+
+					$('.verify #currName2').html(name);
+					$('.verify #currDose').html(dose);
+					$('.verify #currDaily').html(daily);
+					$('.verify #currQuant').html(quant);
+					$('.verify #currRefill').html(refill);
+					$('.verify #currAdd').html(add);
+					$('.verify').show();
+					$('#verify').hide();
+					$('#addmed').show();
+					$('#goback').show();
+					$('form').hide();
+				}
+			});
+			$('#goback').on('click', function(e){
+				e.preventDefault();
+				e.stopPropagation();
+				$('.verify').hide();
+					$('#verify').show();
+					$('#addmed').hide();
+					$('#goback').hide();
+					$('form').show();
+			});
 			$('#addmed').on('click', function(e){
 				var name = $('#name').val();
 				var namecheck = $('#name').val();
@@ -87,11 +131,6 @@ $(window).load(function(){
 				var day = $.datepicker.formatDate( "mm/dd/yy", date);
 				var add = $('#add').val();
 				console.log(name);
-				if(dose=="" || quant =="" || refill=="" || namecheck=="" || day==""){
-					e.preventDefault();
-					e.stopPropagation();
-					$('.error-message').show();
-				}else{
 					meds[name] = {
 						'dose':dose,
 						'daily':daily,
@@ -100,7 +139,6 @@ $(window).load(function(){
 						'datepicker':day,
 						'add':add
 					}
-				}
 			});
 			
 			$.each(meds, function(i, val){

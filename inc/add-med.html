@@ -2,7 +2,7 @@
 <h1>New Prescription</h1>
 <form>
 
-<p class="required">Required*</p>
+	<p class="required">Required*</p>
 	<div class="input-row">
 		<div class="left">
 			<label for="name" class="two-line">Prescription Name*</label>
@@ -53,9 +53,25 @@
 		</div>
 	</div>
 	<p class="error-message">Please fill in the required inputs</p>
+
 </form>
+<div class="verify">
+<p style="text-align:center; margin-bottom:10px"><span>Does this information look correct?</span></p>
+	<p class="label">Prescription Name:</p>
+	<p class="info tall" id="currName2"></p>
+	<p class="label">Dosage:</p>
+	<p class="info"><span id="currDose"></span> pill <span id="currDaily"></span></p>
+	<p class="label">Current Quantity:</p>
+	<p class="info tall"><span id="currQuant"></span> pill(s)</p>
+	<p class="label">Refills Remaining:</p>
+	<p class="info tall" id="currRefill">10</p>
+	<p class="label">Additional Information:</p>
+	<p class="info" id="currAdd"></p>
+</div>
 <div class="footer cf">
-	<a href="#home" class="button" id="addmed">SAVE</a>
+	<a href="#" class="button" id="verify">SAVE</a>
+	<a href="#home" class="button" id="addmed" style=" float:left; display:none;margin-left:90px">SAVE</a>
+	<a href="#" id="goback" class="button" style="float:left; display:none;margin-left:20px">BACK</a>
 	<a href="#home" class="home icon"><span class="icon-home"></span></a>
 </div>
 <script type="text/javascript">$('#datepicker').datepicker();</script>
