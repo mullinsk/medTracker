@@ -12,20 +12,31 @@ $(window).load(function(){
 				$('.meridian .am').toggleClass('selected');
 				$('.meridian .pm').toggleClass('selected');
 			});
-			$('#content').on('click', '#add-notification', function(e){
-				e.preventDefault();
-				e.stopPropagation();
-				$('.reminder-form').show();
-			});
-			$( "#datepicker" ).datepicker({ 
-				dateFormat: "M dd yy"});
-			$('#content form.jqtransform').jqTransform();
-			$('#content form').find('select.jqtransform').each(function(){
-				$(this).jqTransSelect();
-			});
-			$('#content').on('focus', '#datepicker', function(){
-				$(this).removeClass('error');
-			})
+		// Dynamically update Med Profile
+		if(window.location.hash==='#medprofile'){
+			$('#currName').html(current);
+			$('#currName2').html(current);
+			$('#currDose').html(meds[current]['dose']);
+			$('#currDaily').html(meds[current]['daily']);
+			$('#currQuant').html(meds[current]['quant']);
+			$('#currRefill').html(meds[current]['refill']);
+			$('#currAdd').html(meds[current]['add']);
+		}
+
+		$('#content').on('click', '#add-notification', function(e){
+			e.preventDefault();
+			e.stopPropagation();
+			$('.reminder-form').show();
+		});
+		$( "#datepicker" ).datepicker({ 
+			dateFormat: "M dd yy"});
+		$('#content form.jqtransform').jqTransform();
+		$('#content form').find('select.jqtransform').each(function(){
+			$(this).jqTransSelect();
+		});
+		$('#content').on('focus', '#datepicker', function(){
+			$(this).removeClass('error');
+		})
 			// REFILL REMINDER
 			$('.reminder-form.refill #save').on('click', function(e){
 				e.preventDefault();
@@ -73,7 +84,7 @@ $(window).load(function(){
 				var refill = $('#refill').val();
 				var date = $('#datepicker').datepicker('getDate');
 				var day = $.datepicker.formatDate( "mm/dd/yy", date);
-				var add = $('#add').html();
+				var add = $('#add').val();
 				if(dose=="" || quant =="" || refill==
 					""){
 					e.preventDefault();
@@ -100,6 +111,8 @@ $(window).load(function(){
 				$('.med-links').html('<p>No Medicines Added</p>');
 			}
 		});
+
+
 
 
 
