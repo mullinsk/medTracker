@@ -90,14 +90,15 @@ $(window).load(function(){
 				}
 			}
 		});
-			if(meds=='undefined'){
-				$('.medicine-list').html('<p>No Medicines Added</p>');
-			}
+			
 			$.each(meds, function(i, val){
 				var name = i;
-				$('.medicine-list').append(name);
+				$('.med-links').append('<a href="#medprofile">'+name+'</a>');
 				current = name;
 			});
+			if($('.med-links').html()==""){
+				$('.med-links').html('<p>No Medicines Added</p>');
+			}
 		});
 
 
