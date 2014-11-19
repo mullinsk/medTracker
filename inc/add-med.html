@@ -1,57 +1,58 @@
 
-		<h1>New Prescription</h1>
-			<div class="input-row">
-				<div class="left">
-					<label for="name" class="two-line">Prescription Name</label>
-				</div>
-				<div class="right">
-					<input id="name" type="text">
-				</div>
-			</div>
-			<div class="input-row">
-				<div class="left">
-					<label for="dose">Dosage</label>
-				</div>
-				<div class="right">
-
-					<input id="dose" type="text" class="short">
-					<label class="small">pill(s)</label>
-					<select class="jqtransform">
-						<option>Daily</option>
-						<option>2x Daily</option>
-						<option>3x Daily</option>
-					</select>
-				</div>
-			</div>
-			<div class="input-row">
-				<div class="left">
-					<label for="quant" class="two-line">Current Quantity</label>
-				</div>
-				<div class="right">
-					<input id="quant" type="text" class="short">
-				</div>
-			</div>
-			<div class="input-row">
-				<div class="left">
-					<label for="refill">Refills</label>
-				</div>
-				<div class="right">
-					<input id="refill" type="text" class="short">
-					<label for="datepicker" class="small" style="width:40px">until</label>
-					<input id="datepicker" type="text" style="width:110px; font-size:20px; margin-left:0" placeholder="Choose Date">
-				</div>
-			</div>
-			<div class="input-row">
-<div class="left">
-			<label for="add">Additional Information</label>
-			</div>
-				<div class="right">
-					<textarea></textarea>
-				</div>
-			</div>
-		</form>
-		<div class="footer cf">
-			<a href="#home" class="button" id="addmed">SAVE</a>
-			<a href="#home" class="home icon"><span class="icon-home"></span></a>
+<h1>New Prescription</h1>
+<form>
+	<div class="input-row">
+		<div class="left">
+			<label for="name" class="two-line">Prescription Name</label>
 		</div>
-		<script type="text/javascript">$('#datepicker').datepicker();</script>
+		<div class="right">
+			<input id="name" type="text">
+		</div>
+	</div>
+	<div class="input-row">
+		<div class="left">
+			<label for="dose">Dosage</label>
+		</div>
+		<div class="right">
+
+			<input id="dose" type="text" class="short">
+			<label class="small">pill(s)</label>
+			<select class="jqtransform" id="daily">
+				<option>Daily</option>
+				<option>2x Daily</option>
+				<option>3x Daily</option>
+			</select>
+		</div>
+	</div>
+	<div class="input-row">
+		<div class="left">
+			<label for="quant" class="two-line">Current Quantity</label>
+		</div>
+		<div class="right">
+			<input id="quant" type="text" class="short">
+		</div>
+	</div>
+	<div class="input-row">
+		<div class="left">
+			<label for="refill">Refills</label>
+		</div>
+		<div class="right">
+			<input id="refill" type="text" class="short">
+			<label for="datepicker" class="small" style="width:40px">until</label>
+			<input id="datepicker" type="text" style="width:110px; font-size:20px; margin-left:0" placeholder="Choose Date">
+		</div>
+	</div>
+	<div class="input-row">
+		<div class="left">
+			<label for="add">Additional Information</label>
+		</div>
+		<div class="right">
+			<textarea id="add"></textarea>
+		</div>
+	</div>
+</form>
+<div class="footer cf">
+	<a href="#home" class="button" id="addmed">SAVE</a>
+	<a href="#home" class="home icon"><span class="icon-home"></span></a>
+</div>
+<script type="text/javascript">$('#datepicker').datepicker();</script>

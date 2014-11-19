@@ -1,4 +1,5 @@
-window.meds = [];
+window.meds = {};
+current = '';
 $(window).load(function(){
 	$(window).bind('hashchange', function() {
 		var	newHash  = window.location.hash,
@@ -65,11 +66,37 @@ $(window).load(function(){
 			});
 
 			$('#addmed').on('click', function(e){
-				meds.push({'med':'med'});
-			});
+				var name = $('#name').val();
+				var dose = $('#dose').val();
+				var daily = $('.jqTransformSelectWrapper div span').html();
+				var quant = $('#quant').val();
+				var refill = $('#refill').val();
+				var date = $('#datepicker').datepicker('getDate');
+				var day = $.datepicker.formatDate( "mm/dd/yy", date);
+				var add = $('#add').html();
+				if(dose=="" || quant =="" || refill==
+					""){
+					e.preventDefault();
+				e.stopPropagation();
+				console.log('fail');
+			}else{
+				meds[name] = {
+					'dose':dose,
+					'daily':daily,
+					'quant':quant,
+					'refill':refill,
+					'datepicker':day,
+					'add':add
+				}
+			}
+		});
+			if(meds=='undefined'){
+				$('.medicine-list').html('<p>No Medicines Added</p>');
+			}
 			$.each(meds, function(i, val){
-				var name = meds[i].med;
+				var name = i;
 				$('.medicine-list').append(name);
+				current = name;
 			});
 		});
 
