@@ -1,9 +1,11 @@
 
 <h1>New Prescription</h1>
 <form>
+
+<p class="required">Required*</p>
 	<div class="input-row">
 		<div class="left">
-			<label for="name" class="two-line">Prescription Name</label>
+			<label for="name" class="two-line">Prescription Name*</label>
 		</div>
 		<div class="right">
 			<input id="name" type="text">
@@ -11,7 +13,7 @@
 	</div>
 	<div class="input-row">
 		<div class="left">
-			<label for="dose">Dosage</label>
+			<label for="dose">Dosage*</label>
 		</div>
 		<div class="right">
 
@@ -26,7 +28,7 @@
 	</div>
 	<div class="input-row">
 		<div class="left">
-			<label for="quant" class="two-line">Current Quantity</label>
+			<label for="quant" class="two-line">Current Quantity*</label>
 		</div>
 		<div class="right">
 			<input id="quant" type="text" class="short">
@@ -34,7 +36,7 @@
 	</div>
 	<div class="input-row">
 		<div class="left">
-			<label for="refill">Refills</label>
+			<label for="refill">Refills*</label>
 		</div>
 		<div class="right">
 			<input id="refill" type="text" class="short">
@@ -50,9 +52,20 @@
 			<textarea id="add"></textarea>
 		</div>
 	</div>
+	<p class="error-message">Please fill in the required inputs</p>
 </form>
 <div class="footer cf">
 	<a href="#home" class="button" id="addmed">SAVE</a>
 	<a href="#home" class="home icon"><span class="icon-home"></span></a>
 </div>
 <script type="text/javascript">$('#datepicker').datepicker();</script>
+<style type="text/css">
+	.jqTransformSelectWrapper{
+		float:right;
+		margin-top:-43px;
+		min-width: 113px;
+	}
+	.jqTransformSelectWrapper ul{
+		width:100px !important;
+	}
+</style>

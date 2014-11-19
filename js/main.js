@@ -78,6 +78,7 @@ $(window).load(function(){
 
 			$('#addmed').on('click', function(e){
 				var name = $('#name').val();
+				var namecheck = $('#name').val();
 				var dose = $('#dose').val();
 				var daily = $('.jqTransformSelectWrapper div span').html();
 				var quant = $('#quant').val();
@@ -85,26 +86,26 @@ $(window).load(function(){
 				var date = $('#datepicker').datepicker('getDate');
 				var day = $.datepicker.formatDate( "mm/dd/yy", date);
 				var add = $('#add').val();
-				if(dose=="" || quant =="" || refill==
-					""){
+				console.log(name);
+				if(dose=="" || quant =="" || refill=="" || namecheck=="" || day==""){
 					e.preventDefault();
-				e.stopPropagation();
-				console.log('fail');
-			}else{
-				meds[name] = {
-					'dose':dose,
-					'daily':daily,
-					'quant':quant,
-					'refill':refill,
-					'datepicker':day,
-					'add':add
+					e.stopPropagation();
+					$('.error-message').show();
+				}else{
+					meds[name] = {
+						'dose':dose,
+						'daily':daily,
+						'quant':quant,
+						'refill':refill,
+						'datepicker':day,
+						'add':add
+					}
 				}
-			}
-		});
+			});
 			
 			$.each(meds, function(i, val){
 				var name = i;
-				$('.med-links').append('<a href="#medprofile">'+name+'</a>');
+				$('.med-links').append('<li><a href="#medprofile">'+name+'</a></li>');
 				current = name;
 			});
 			if($('.med-links').html()==""){

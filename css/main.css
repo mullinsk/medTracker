@@ -78,7 +78,7 @@ span{
 .jqTransformSelectOpen:before{
 	content:'\25BC';
 	width:200px;
-	font-size:20px;
+	font-size:10px;
 }
 
 .jqTransformSelectWrapper ul{
@@ -268,6 +268,17 @@ input#datepicker{
 input.error, input#datepicker.error{
 	border:1px solid red;
 }
+ul.med-links{
+	margin:0;
+	padding:0;
+	list-style: none;
+}
+.error-message{
+	color:red;
+	display: none;
+	text-align: center;
+	font-style: italic;
+}
 .meridian{
 	width:25px;
 	float:left;
@@ -389,4 +400,11 @@ input.error, input#datepicker.error{
 .ui-datepicker .ui-datepicker-buttonpane button.ui-datepicker-current {
 	float: left;
 	border:1px solid #0E2E8C;
+}
+
+.required{
+	font-size:14px;
+	width:97px;
+	text-align: right;
+
 }
