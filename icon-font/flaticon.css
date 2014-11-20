@@ -16,6 +16,7 @@ font-style: normal;
 }
 .icon-cal:before {
 	content: "\e000";
+	font-size: 35px;
 }
 .icon-home:before {
 	content: "\e001";

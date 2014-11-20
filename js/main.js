@@ -140,7 +140,7 @@ $(window).load(function(){
 						'add':add
 					}
 			});
-			
+
 			$.each(meds, function(i, val){
 				var name = i;
 				$('.med-links').append('<li><a href="#medprofile">'+name+'</a></li>');

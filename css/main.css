@@ -12,10 +12,14 @@ a{
 	text-decoration: none;
 	color:#0E2E8C;
 }
+a:active span{
+	color: #0E2EAc;
+}
 h1{
 	margin-top: 0;
 	text-transform: capitalize;
 	font-size:35px;
+	min-height:35px;
 }
 h1.title{
 	text-shadow:3px 3px #E8F8FF;
@@ -155,6 +159,10 @@ span{
 	padding:5px 10px;
 	border-radius: 5px;
 	color:#fff;
+}
+.button:active{
+	background: #E8F8FF;
+	color:#0E2E8C;
 }
 
 .cf:after {
@@ -296,10 +304,12 @@ ul.med-links{
 	padding:0;
 	list-style: none;
 }
+ul.med-links li{
+	border-bottom: 1px solid #fff;
+}
 ul.med-links li a{
 	text-transform: capitalize;
 	margin-bottom:5px;
-	text-decoration: underline;
 }
 .error-message{
 	color:red;
