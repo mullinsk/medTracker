@@ -35,7 +35,6 @@ h1.title{
 	min-height:200px;
 	margin: 0 auto;
 	padding: 10px;
-	background-color: #E8F8FF;
 	text-align:center;
 }
 .a.icon, a.icon{
@@ -306,7 +305,12 @@ ul.med-links{
 	list-style: none;
 }
 ul.med-links li{
-	border-bottom: 1px solid #fff;
+	cursor: pointer;
+	background: #E8F8FF;
+	margin-bottom: 5px;
+}
+ul.med-links li:hover{
+	border:1px solid #0E2E8C;
 }
 ul.med-links li a{
 	text-transform: capitalize;

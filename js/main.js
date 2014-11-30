@@ -1,5 +1,15 @@
 window.meds = {};
+window.refills = {};
 current = '';
+function timesdaily(s){
+	if(s==="Daily"){
+		return 1;
+	}else if (s==="2x Daily"){
+		return 2;
+	}else if (s==="3x Daily"){
+		return 3;
+	}
+}
 $(window).load(function(){
 	$(window).bind('hashchange', function() {
 		var	newHash  = window.location.hash,
@@ -38,6 +48,11 @@ $(window).load(function(){
 		$('#content').on('focus', '#datepicker', function(){
 			$(this).removeClass('error');
 		});
+		if(window.location.hash==='#refill'){
+			$('.reminder-set #month').html(refills[current]['month']);
+			$('.reminder-set #day').html(refills[current]['day']);
+			$('.reminder-set #year').html(refills[current]['year']);
+		}
 			// REFILL REMINDER
 			$('.reminder-form.refill #save').on('click', function(e){
 				e.preventDefault();
@@ -70,6 +85,8 @@ $(window).load(function(){
 				e.stopPropagation();
 				$('.reminder-form').hide();
 			});
+
+
 			// DAILY REMINDER
 			$('.reminder-form.sched #save').on('click', function(e){
 				e.preventDefault();
@@ -78,7 +95,7 @@ $(window).load(function(){
 				$('.reminder-form').hide();
 				$('.all-reminders').append(
 					'<div class="reminder-set"><div class="time">'
-					+time+' before</div><span class="delete"></span></div>'
+					+time+' before dose</div><span class="delete"></span></div>'
 					);
 			});
 			$('#verify').on('click', function(e){
@@ -115,30 +132,39 @@ $(window).load(function(){
 				e.preventDefault();
 				e.stopPropagation();
 				$('.verify').hide();
-					$('#verify').show();
-					$('#addmed').hide();
-					$('#goback').hide();
-					$('form').show();
+				$('#verify').show();
+				$('#addmed').hide();
+				$('#goback').hide();
+				$('form').show();
 			});
+			
 			$('#addmed').on('click', function(e){
 				var name = $('#name').val();
 				var namecheck = $('#name').val();
 				var dose = $('#dose').val();
-				var daily = $('.jqTransformSelectWrapper div span').html();
+				var daily = $('#currDaily').html();
 				var quant = $('#quant').val();
 				var refill = $('#refill').val();
 				var date = $('#datepicker').datepicker('getDate');
 				var day = $.datepicker.formatDate( "mm/dd/yy", date);
 				var add = $('#add').val();
-				console.log(name);
-					meds[name] = {
-						'dose':dose,
-						'daily':daily,
-						'quant':quant,
-						'refill':refill,
-						'datepicker':day,
-						'add':add
-					}
+				var refillDay = new Date();
+				var doseDaily = timesdaily(daily);
+				var daystoR = quant / (doseDaily*dose);
+				refillDay.setDate(refillDay.getDate()+daystoR);
+				var rMonth = $.datepicker.formatDate('M', refillDay);
+				var rDay = $.datepicker.formatDate('dd', refillDay);
+				var rYear = $.datepicker.formatDate('yy', refillDay)
+				
+				meds[name] = {
+					'dose':dose,
+					'daily':daily,
+					'quant':quant,
+					'refill':refill,
+					'datepicker':day,
+					'add':add
+				}
+				refills[name]={'month':rMonth, 'day':rDay, 'year':rYear};
 			});
 
 			$.each(meds, function(i, val){
